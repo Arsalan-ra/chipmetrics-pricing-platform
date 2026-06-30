@@ -261,7 +261,7 @@ total_dollar_gap = matched_df["dollar_gap"].sum()   # net gap across all matched
 # ---------------------------------------------------------------------------
 # Page header
 # ---------------------------------------------------------------------------
-st.title(" Pricing Compliance Analysis")
+st.subheader(" Pricing Compliance Analysis")
 st.caption(
     "Comparing **negotiated_unit_price** (what customers actually paid) against "
     "**contracted_price** (what pricing agreements say they should pay). "

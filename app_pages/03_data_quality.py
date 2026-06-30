@@ -30,7 +30,7 @@ _dfs, issues_log = load_all_data()
 # ---------------------------------------------------------------------------
 # Page header + cleaning approach summary
 # ---------------------------------------------------------------------------
-st.title(" Data Quality Report")
+st.subheader(" Data Quality Report")
 st.markdown(
     """
     This page documents every data quality issue identified during the loading

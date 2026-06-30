@@ -95,34 +95,6 @@ with st.sidebar:
     )
 
 # ---------------------------------------------------------------------------
-# Platform header — shown on every page above the selected content
-# ---------------------------------------------------------------------------
-st.markdown(
-    """
-    <div style="
-        background: linear-gradient(90deg, #0F62FE 0%, #0043CE 100%);
-        padding: 18px 28px;
-        border-radius: 6px;
-        margin-bottom: 24px;
-        display: flex;
-        align-items: center;
-        gap: 16px;
-    ">
-        <div>
-            <div style="font-size:1.35rem; font-weight:800; color:#ffffff; letter-spacing:-0.3px;">
-                 ChipMetrics Pricing Intelligence Platform
-            </div>
-            <div style="font-size:0.88rem; color:#a6c8ff; margin-top:3px;">
-                Analyze order trends, enforce pricing agreements, and track regional
-                performance — built for semiconductor sales and operations teams.
-            </div>
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-
-# ---------------------------------------------------------------------------
 # Page routing — import and run the selected page module
 # ---------------------------------------------------------------------------
 import importlib.util

@@ -151,7 +151,7 @@ if df.empty:
 # ---------------------------------------------------------------------------
 # Page header
 # ---------------------------------------------------------------------------
-st.title(" Order Analytics Dashboard")
+st.subheader(" Order Analytics Dashboard")
 st.caption(
     f"Showing orders from **{start_date.strftime('%b %d, %Y')}** "
     f"to **{end_date.strftime('%b %d, %Y')}** — "

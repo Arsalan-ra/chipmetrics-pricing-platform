@@ -203,7 +203,7 @@ df = merged[mask].copy()
 # ---------------------------------------------------------------------------
 # Page header
 # ---------------------------------------------------------------------------
-st.title("Target vs. Actual Performance")
+st.subheader("Target vs. Actual Performance")
 st.caption(
     "Compares booked order revenue against quarterly sales targets "
     "by region and product family. Cancelled orders are excluded from actuals."
