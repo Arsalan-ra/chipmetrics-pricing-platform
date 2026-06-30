@@ -1,6 +1,6 @@
 """
-pages/04_target_vs_actual.py
-----------------------------
+app_pages/04_target_vs_actual.py
+----------------------------------
 Target vs. Actual Performance - Bonus Page for ChipMetrics.
 
 Joins enriched order data to regional_targets on:
@@ -280,7 +280,7 @@ display.columns = [
     "Target Revenue", "Actual Revenue", "Attainment %", "Status",
 ]
 display.index = range(1, len(display) + 1)
-st.dataframe(display, use_container_width=True)
+st.dataframe(display, width='stretch')
 
 # ---------------------------------------------------------------------------
 # Attainment bar chart
@@ -344,7 +344,7 @@ if not df_targeted.empty:
         legend_title="Band",
         xaxis_ticksuffix="%",
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 # ---------------------------------------------------------------------------
 # Combinations with no target data
@@ -370,4 +370,4 @@ else:
         ["Quarter", "Region", "Product Family"]
     ).reset_index(drop=True)
     no_target_display.index = range(1, len(no_target_display) + 1)
-    st.dataframe(no_target_display, use_container_width=True)
+    st.dataframe(no_target_display, width='stretch')

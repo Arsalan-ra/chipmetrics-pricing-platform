@@ -1,6 +1,6 @@
 """
-pages/01_order_analytics.py
----------------------------
+app_pages/01_order_analytics.py
+--------------------------------
 Order Analytics Dashboard — Page 1 of ChipMetrics.
 
 All data comes from data_loader.load_all_data(). No raw CSV reads here.
@@ -259,7 +259,7 @@ fig_breakdown.update_layout(
     yaxis_title="Revenue (USD)",
     xaxis_title="",
 )
-st.plotly_chart(fig_breakdown, use_container_width=True)
+st.plotly_chart(fig_breakdown, width='stretch')
 
 st.divider()
 
@@ -306,7 +306,7 @@ with col_left:
         pull=[0.04] * len(status_df),
     )
     fig_status.update_layout(**CHART_LAYOUT)
-    st.plotly_chart(fig_status, use_container_width=True)
+    st.plotly_chart(fig_status, width='stretch')
 
 # --- 3c. Top 10 Customers by Revenue ---
 # Business question answered: who are we most dependent on? This chart is the
@@ -346,7 +346,7 @@ with col_right:
         xaxis_title="Revenue (USD)",
         yaxis_title="",
     )
-    st.plotly_chart(fig_top_cust, use_container_width=True)
+    st.plotly_chart(fig_top_cust, width='stretch')
 
 st.divider()
 
@@ -421,7 +421,7 @@ display_conc["Revenue (USD)"] = display_conc["Revenue (USD)"].apply(lambda x: f"
 display_conc["Share (%)"]     = display_conc["Share (%)"].apply(lambda x: f"{x:.1f}%")
 display_conc["Cumulative Share"] = display_conc["Cumulative Share"].apply(lambda x: f"{x:.1f}%")
 display_conc.index = range(1, len(display_conc) + 1)
-st.dataframe(display_conc, use_container_width=True)
+st.dataframe(display_conc, width='stretch')
 
 st.divider()
 
@@ -528,7 +528,7 @@ fig_cancel.update_traces(
         "Cancelled: %{customdata[1]}<extra></extra>"
     )
 )
-st.plotly_chart(fig_cancel, use_container_width=True)
+st.plotly_chart(fig_cancel, width='stretch')
 
 st.divider()
 
@@ -597,7 +597,7 @@ fig_aov.update_layout(
     legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
 )
 
-st.plotly_chart(fig_aov, use_container_width=True)
+st.plotly_chart(fig_aov, width='stretch')
 
 # Insight callout: flag when mean >> median (skew from a few large orders)
 for _, row in aov_by_type.iterrows():
@@ -614,4 +614,4 @@ for _, row in aov_by_type.iterrows():
 aov_by_type["Mean AOV (USD)"]   = aov_by_type["Mean AOV (USD)"].apply(lambda x: f"${x:,.0f}")
 aov_by_type["Median AOV (USD)"] = aov_by_type["Median AOV (USD)"].apply(lambda x: f"${x:,.0f}")
 aov_by_type.index = range(1, len(aov_by_type) + 1)
-st.dataframe(aov_by_type, use_container_width=True)
+st.dataframe(aov_by_type, width='stretch')

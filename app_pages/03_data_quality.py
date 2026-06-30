@@ -1,6 +1,6 @@
 """
-pages/03_data_quality.py
-------------------------
+app_pages/03_data_quality.py
+------------------------------
 Data Quality Report — Bonus Page for ChipMetrics.
 
 Renders the issues_log accumulated during data loading. No raw CSV reads.
@@ -107,7 +107,7 @@ col_config = {
 if "Description" in display_cols:
     col_config["Description"] = st.column_config.TextColumn("Description", width="large")
 
-st.dataframe(final_df, use_container_width=True, column_config=col_config)
+st.dataframe(final_df, width='stretch', column_config=col_config)
 
 # ---------------------------------------------------------------------------
 # Issue type legend

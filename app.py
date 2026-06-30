@@ -146,7 +146,7 @@ def _run_page(module_path: str) -> None:
         st.set_page_config = original
 
 
-PAGES_DIR = Path(__file__).parent / "pages"
+PAGES_DIR = Path(__file__).parent / "app_pages"
 
 PAGE_MODULES = {
     PAGE_ORDER_ANALYTICS:    PAGES_DIR / "01_order_analytics.py",

@@ -1,6 +1,6 @@
 """
-pages/02_pricing_compliance.py
-------------------------------
+app_pages/02_pricing_compliance.py
+------------------------------------
 Pricing Compliance Analysis — Page 2 of ChipMetrics.
 
 All data comes from data_loader.load_all_data(). No raw CSV reads here.
@@ -395,7 +395,7 @@ fig_type.update_layout(
     yaxis_title="Order Lines",
     legend_title="Compliance Status",
 )
-st.plotly_chart(fig_type, use_container_width=True)
+st.plotly_chart(fig_type, width='stretch')
 
 # Per-type compliance rate summary
 type_rate_display = type_rate.copy()
@@ -407,7 +407,7 @@ type_rate_display = type_rate_display.sort_values("Customer Type").reset_index(d
 type_rate_display.index = range(1, len(type_rate_display) + 1)
 
 with st.expander("Compliance rate by customer type (table)"):
-    st.dataframe(type_rate_display, use_container_width=True)
+    st.dataframe(type_rate_display, width='stretch')
 
 st.divider()
 
@@ -464,7 +464,7 @@ fig_region.update_layout(
     yaxis_title="",
     legend_title="Compliance Status",
 )
-st.plotly_chart(fig_region, use_container_width=True)
+st.plotly_chart(fig_region, width='stretch')
 
 # Per-region compliance rate overlaid as a small table
 region_rate_display = region_rate.copy()
@@ -476,7 +476,7 @@ region_rate_display = region_rate_display.sort_values("Region").reset_index(drop
 region_rate_display.index = range(1, len(region_rate_display) + 1)
 
 with st.expander("Compliance rate by region (table)"):
-    st.dataframe(region_rate_display, use_container_width=True)
+    st.dataframe(region_rate_display, width='stretch')
 
 st.divider()
 
@@ -565,7 +565,7 @@ display_gap.index = range(1, len(display_gap) + 1)
 
 st.dataframe(
     display_gap,
-    use_container_width=True,
+    width='stretch',
     column_config={
         "Status": st.column_config.TextColumn("Status"),
         "Total Dollar Gap": st.column_config.TextColumn(
